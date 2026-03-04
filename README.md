@@ -15,9 +15,55 @@ Sistema bancário v1 (Um usário)
 
     Observações: 3 saques diários, limite de saque de R$500,00 por operação, depósito mínimo de R$1. Caso não tenha saldo suficiente para realizar um saque, exibir a mensagem "Saldo insuficiente." O sistema deve ser implementado utilizando funções para cada operação (sacar, depositar, extrato) e uma função principal para controlar o fluxo do programa.
 
-## Versão 2
 
-O repositório contém os seguintes arquivos de código:
+## Versão 2 - Sistema Bancário com POO
 
-- `desafio_1.py` – implementação inicial do sistema bancário (Versão 1) com as funcionalidades básicas de depósito, saque (com limite diário de 3 saques e limite de R$500 por operação) e visualização de extrato. Usa variáveis globais e funções simples, rodando em loop no console até o usuário escolher sair.
-- `desafio_2.py` – versão ampliada que adiciona cadastro de usuários e criação de contas vinculadas a um CPF, mantendo lista de usuários e contas. Também refatora os métodos de saque e depósito com argumentos posicionais e nomeados, e preserva limite diário de saques e extrato em string.
+Esta versão implementa o sistema bancário utilizando **Programação Orientada a Objetos (POO)**, tornando o código mais organizado, flexível e fácil de manter. Os principais arquivos e componentes são:
+
+- `desafio_3_1.py` – Define as principais classes do sistema:
+    - `Cliente` e `PessoaFisica`: representam os usuários, seus dados e contas associadas.
+    - `Conta` e `ContaCorrente`: modelam as contas bancárias, com métodos para saque, depósito e histórico de operações. `ContaCorrente` implementa limites de saque e quantidade de saques diários.
+    - `Historico`: registra todas as transações realizadas na conta, com data e tipo.
+    - `Transacao`, `Saque` e `Deposito`: abstraem as operações bancárias, facilitando a extensão para novos tipos de transação.
+
+- `desafio_3_2.py` – Ponto de entrada do sistema, responsável pelo menu interativo e fluxo principal:
+    - Permite cadastrar clientes, criar contas, realizar depósitos, saques e consultar extrato.
+    - Utiliza as classes do sistema para manipular os dados e operações de forma orientada a objetos.
+    - Funções como `depositar` e `sacar` foram simplificadas para evitar repetição, usando uma função genérica para transações.
+
+### Funcionalidades principais
+
+- Cadastro de clientes e contas vinculadas ao CPF.
+- Depósito e saque com validações (valor positivo, limite de saque, máximo de saques diários).
+- Histórico detalhado de transações por conta.
+- Menu interativo para todas as operações.
+
+### Observações
+
+O uso de POO permite fácil expansão do sistema, como inclusão de novos tipos de conta ou regras específicas. O código está mais modular, facilitando testes e manutenção.
+
+## Versão 3 - Orientação a Objetos (POO)
+
+A terceira versão reescreve o sistema utilizando programação orientada a objetos. Os principais componentes e arquivos são:
+
+- `desafio_3_1.py` – contém as classes que modelam clientes, contas, histórico e transações.
+  - `Cliente` e `PessoaFisica` para representar os usuários e seus dados.
+  - `Conta` como classe base com propriedades e métodos de saque, depósito e histórico.
+  - `ContaCorrente` especializada com limite por saque e número máximo de saques diários.
+  - `Historico` armazena as operações realizadas com timestamps.
+  - `Transacao`, `Saque` e `Deposito` abstraem o comportamento de cada operação.
+  - Uso de padrões como métodos de classe (`nova_conta`), propriedades e herança.
+
+- `desafio_3_2.py` – ponto de entrada (ainda vazio neste repositório) responsável por criar objetos e exibir o menu interativo. Nesta versão o fluxo principal pode ser implementado criando instâncias de clientes e contas e utilizando objetos de transação para registrar operações.
+
+### Funcionalidades mantidas
+
+- Limite de saque de R$500 por operação e até 3 saques por dia.
+- Depósito apenas com valores positivos.
+- Histórico de transações exibido em extrato.
+- Exibição de menu para depositar, sacar, ver extrato ou sair.
+
+### Observações
+
+A arquitetura orientada a objetos facilita extensão futura (novos tipos de conta, regras específicas) e melhora a organização do código. O README passa a documentar as classes básicas e como usá-las para configurar o sistema bancário na versão POO.
+
