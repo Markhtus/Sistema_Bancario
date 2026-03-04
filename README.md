@@ -67,3 +67,35 @@ A terceira versão reescreve o sistema utilizando programação orientada a obje
 
 A arquitetura orientada a objetos facilita extensão futura (novos tipos de conta, regras específicas) e melhora a organização do código. O README passa a documentar as classes básicas e como usá-las para configurar o sistema bancário na versão POO.
 
+## Versão 4 - Decoradores, Iteradores e Geradores
+
+Esta versão aprimora o sistema bancário com conceitos avançados de Python: decoradores, iteradores e geradores. O arquivo principal é `version_4.py`, que integra essas funcionalidades ao sistema POO existente.
+
+### Principais Componentes e Funcionalidades
+
+- **Decorador de Log**: 
+  - Aplicado a todas as funções de transações (depósito, saque, criação de conta, etc.).
+  - Registra (imprime) a data e hora de cada transação, bem como o tipo de transação.
+  - Implementado via [`log_transacao`], um decorador parametrizado que aceita o tipo de transação.
+
+- **Gerador de Relatório**:
+  - Implementado no método [`gerar_relatorio`] da classe [`Historico`]
+  - Permite iterar sobre as transações de uma conta, retornando-as uma a uma.
+  - Suporta filtragem por tipo de transação (ex.: apenas saques ou apenas depósitos), utilizando o parâmetro opcional `tipo`.
+
+- **Iterador Personalizado**:
+  - Classe [`ContaIterador`] para iterar sobre todas as contas do banco.
+  - Retorna informações básicas de cada conta (número, agência, titular, saldo) em cada iteração.
+  - Utilizado na função [`listar_contas`] para exibir a lista de contas.
+
+### Funcionalidades Adicionadas ou Aprimoradas
+
+- Menu expandido com opções para relatório de transações filtrado e listagem de contas via iterador.
+- Logs automáticos para todas as transações, melhorando a rastreabilidade.
+- Relatórios gerados sob demanda, com possibilidade de filtro, utilizando geradores para eficiência de memória.
+- Iteração personalizada sobre contas, facilitando operações em lote ou exibições.
+
+### Observações
+
+Esta versão demonstra o uso prático de decoradores para logging, geradores para relatórios eficientes e iteradores para navegação customizada de dados. Mantém a compatibilidade com versões anteriores, focando em aprimoramentos funcionais e educacionais. O código é mais conciso e performático, especialmente em operações com grandes volumes de dados.
+

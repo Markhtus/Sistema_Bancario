@@ -34,4 +34,14 @@ Versão 3.1 - POO
     Iniciar modelagem do sistema bancário em POO. Adicionar classes para cliente e as operações bancárias: depósito e saque.
     
     Atualizar para armazenar os dados dos clientes e contas bancárias em objetos ao invés de dicionários
+
+Versão 4  - Decorador, Iterador e Gerador
+    Decorador de log:
+        Seja aplicado a todas funções de transações (depósito, saque, criação de conta, etc).
+        Esse decorador deve registrar(printar) a data e hora de cada transação e bem como tipo de transação
+    Gerador de relatório:
+        iterar sobre as transações de uma conta e retorne, uma a uma, as transações que foram realizadas. Deve tambem ter uma forma de filtrar as transações baseado em seu tipo (por exemplo, apenas saques ou apoenas depósitos)
+    Iterador personalizado:
+        ContaIterador que permita iterar sobre todas as contas do banco, retornando informações básocas de cada conta (número,saldo, atual, etc)
+
     
