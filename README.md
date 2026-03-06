@@ -90,7 +90,7 @@ Esta versão aprimora o sistema bancário com conceitos avançados de Python: de
 
 ### Funcionalidades Adicionadas ou Aprimoradas
 
-- Menu expandido com opções para relatório de transações filtrado e listagem de contas via iterador.
+- Menu simplificado com extrato único, sem opção de relatório separado; os detalhes de transações aparecem diretamente no extrato.
 - Logs automáticos para todas as transações, melhorando a rastreabilidade.
 - Relatórios gerados sob demanda, com possibilidade de filtro, utilizando geradores para eficiência de memória.
 - Iteração personalizada sobre contas, facilitando operações em lote ou exibições.
@@ -98,4 +98,18 @@ Esta versão aprimora o sistema bancário com conceitos avançados de Python: de
 ### Observações
 
 Esta versão demonstra o uso prático de decoradores para logging, geradores para relatórios eficientes e iteradores para navegação customizada de dados. Mantém a compatibilidade com versões anteriores, focando em aprimoramentos funcionais e educacionais. O código é mais conciso e performático, especialmente em operações com grandes volumes de dados.
+
+## Versão 5 - Limites e contagens diárias de transações
+
+A quinta versão adiciona controles mais sofisticados sobre a quantidade de operações realizadas por conta em um único dia, reforçando regras de negócio e ampliando a rastreabilidade.
+
+### Principais melhorias
+
+- **Limite diário de transações**: cada conta agora possui um atributo `_limite_transacoes_diarias` que restringe o número total de operações (saques ou depósitos) por dia.
+- **Contagem de transações**: implementação de `_contar_transacoes_diarias` na classe `Conta` que verifica quantas transações já foram feitas na data atual.
+- **Validação nas transações**: os métodos `registrar` de `Saque` e `Deposito` consultam o contador diário e impedem novas operações quando o limite é atingido, exibindo mensagem de erro apropriada.
+- **Integração com decoradores**: o decorador `log_transacao` continua registrando data/hora e tipo, agora também aplicado nos métodos `registrar` para maior rastreabilidade.
+- **Atributo de limite no conta corrente**: `ContaCorrente` herda o limite diário e mantém restrições de valores e quantidade de saques, garantindo múltiplos níveis de validação.
+
+As demais funcionalidades de cliente, menu interativo, histórico, gerador de relatórios e iterador de contas permanecem presentes, garantindo compatibilidade com versões anteriores enquanto adicionam regras de negócio mais robustas.
 

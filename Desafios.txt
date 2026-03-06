@@ -44,4 +44,8 @@ Versão 4  - Decorador, Iterador e Gerador
     Iterador personalizado:
         ContaIterador que permita iterar sobre todas as contas do banco, retornando informações básocas de cada conta (número,saldo, atual, etc)
 
+Versão 5 - data e hora
+    - Esatabelcer limite de 10 transações diárias para uma conta
+    - Se o usuário tentar fazer uma transação após atingir o limite, deve ser informado que ele execedeu o número de transações permitidas para aquele dia
+    - Mostre no extrato, a data e hora de todas as transações
     
