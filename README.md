@@ -113,3 +113,64 @@ A quinta versão adiciona controles mais sofisticados sobre a quantidade de oper
 
 As demais funcionalidades de cliente, menu interativo, histórico, gerador de relatórios e iterador de contas permanecem presentes, garantindo compatibilidade com versões anteriores enquanto adicionam regras de negócio mais robustas.
 
+## Versão 6 - Log em Arquivo, Padrão Strategy e Melhorias na Iteração
+
+A sexta versão consolidada aprimora significativamente o sistema bancário com persistência de logs em arquivo, implementação completa do padrão Strategy e refinamentos na iteração e filtragem de dados.
+
+### Principais Implementações
+
+- **Decorador de Log com Persistência em Arquivo**:
+  - Novo decorador `log_transacao` que registra automaticamente todas as transações (saques e depósitos) em um arquivo `log.txt`.
+  - Captura informações detalhadas: data/hora (`dd-mm-aaaa HH:MM:SS`), nome da função, argumentos passados e valor retornado.
+  - Aplicado automaticamente aos métodos `sacar`, `depositar` e `registrar` das classes de transação.
+  - Facilita auditoria e rastreamento de todas as operações do banco.
+
+- **Padrão Strategy com Classes Abstratas**:
+  - Classe abstrata `Transacao` definida com `ABC` (Abstract Base Class) e `@abstractmethod`.
+  - Define contrato claro: propriedade `valor` e método `registrar(conta)` que toda transação deve implementar.
+  - Classes `Saque` e `Deposito` implementam o contrato abstrato, encapsulando lógica específica de cada operação.
+  - Facilita a extensão para novos tipos de transação no futuro, mantendo flexibilidade e segurança de tipo.
+
+- **Iterator Customizado para Contas**:
+  - Classe `ContaIterador` implementa protocolos `__iter__()` e `__next__()` para iteração customizada.
+  - Retorna dicionário com informações básicas: número, agência, titular e saldo da conta.
+  - Função `listar_contas()` utiliza o iterator para exibir todas as contas de forma elegante e organizada.
+  - Exemplifica boas práticas de design iterável em Python.
+
+- **Gerador para Relatórios com Filtro**:
+  - Método `gerar_relatorio(tipo=None)` em `Historico` usa `yield` para retornar transações uma a uma.
+  - Suporta filtro opcional por tipo: `Saque`, `Deposito` ou todas as transações (quando `tipo=None`).
+  - Função `exibir_relatorio()` no menu permite ao usuário filtrar relatórios por tipo de operação.
+  - Economia de memória em contas com muitas transações.
+
+- **Método Privado para Contagem de Transações Diárias**:
+  - Método `_contar_transacoes_diarias()` na classe `Conta` verifica limite diário (10 transações).
+  - Utiliza compreensão de lista com filtro de data para contar operações do dia atual.
+  - Validação ocorre em ambos os métodos `registrar` de `Saque` e `Deposito`, garantindo consistência.
+
+- **Propriedades (`@property`) para Encapsulamento**:
+  - Atributos privados (`_saldo`, `_numero`, `_agencia`, `_cliente`, `_historico`) acessados apenas via propriedades.
+  - Garante validação e controle centralizado sobre dados sensíveis da conta.
+  - Implementação de boas práticas de encapsulamento e proteção de dados.
+
+- **Método de Classe (`@classmethod`) para Criação**:
+  - Método `nova_conta()` em `Conta` exemplo de método de classe para construir instâncias de forma padronizada.
+  - Facilita criação consistent de contas e permite lógica customizada em subclasses.
+
+- **Menu Interativo Expandido**:
+  - Opção `[r]` para exibir **Relatório de transações** com filtro opcional por tipo (Saque/Depósito).
+  - Opção `[lc]` para **Listar contas** com visualização formatada de todas as contas e seus saldos.
+  - Menu mantém compatibilidade com versões anteriores (depósito, saque, extrato).
+
+### Funcionalidades Mantidas
+
+- Cadastro de clientes (PessoaFisica) e contas (ContaCorrente) vinculadas ao CPF.
+- Limites de saque (R$500) e máximo de saques diários (10).
+- Limite total de 10 transações por dia (saques + depósitos).
+- Histórico detalhado de todas as operações com timestamps.
+- Sistema de log com decoradores para rastreamento de execução.
+
+### Observações
+
+A versão 6 representa uma consolidação madura do sistema bancário, demonstrando domínio de conceitos avançados de Python como decoradores parametrizados, classes abstratas, iteradores customizados, geradores e padrões de design. O código é altamente extensível, mantível e segue as melhores práticas de engenharia de software. A persistência de logs em arquivo agrega valor significativo para auditoria e conformidade.
+
