@@ -27,14 +27,8 @@ Ferramentas de qualidade de código:
 - **Black** – formatação automática
 - **Isort** – organização de imports
 
-## Como executar o projeto
 
-1. Clone o repositório
 
-```bash
-git clone https://github.com/seu-usuario/Sistema_Bancario.git
-
-```markdown
 ---
 ## Evolução do projeto
 ### Versão 1
@@ -52,9 +46,7 @@ Sistema bancário v1 (Um usuário)
 
     Observações: 3 saques diários, limite de saque de R$500,00 por operação, depósito mínimo de R$1. Caso não tenha saldo suficiente para realizar um saque, exibir a mensagem "Saldo insuficiente." O sistema deve ser implementado utilizando funções para cada operação (sacar, depositar, extrato) e uma função principal para controlar o fluxo do programa.
 
-```markdown
 ---
-
 ### Versão 2 - Sistema Bancário com POO
 
 Esta versão implementa o sistema bancário utilizando **Programação Orientada a Objetos (POO)**, tornando o código mais organizado, flexível e fácil de manter. Os principais arquivos e componentes são:
@@ -81,7 +73,6 @@ Esta versão implementa o sistema bancário utilizando **Programação Orientada
 
 O uso de POO permite fácil expansão do sistema, como inclusão de novos tipos de conta ou regras específicas. O código está mais modular, facilitando testes e manutenção.
 
-```markdown
 ---
 
 ### Versão 3 - Orientação a Objetos (POO)
@@ -141,7 +132,6 @@ Esta versão aprimora o sistema bancário com conceitos avançados de Python: de
 
 Esta versão demonstra o uso prático de decoradores para logging, geradores para relatórios eficientes e iteradores para navegação customizada de dados. Mantém a compatibilidade com versões anteriores, focando em aprimoramentos funcionais e educacionais. O código é mais conciso e performático, especialmente em operações com grandes volumes de dados.
 
-```markdown
 ---
 
 ### Versão 5 - Limites e contagens diárias de transações
@@ -158,7 +148,7 @@ A quinta versão adiciona controles mais sofisticados sobre a quantidade de oper
 
 As demais funcionalidades de cliente, menu interativo, histórico, gerador de relatórios e iterador de contas permanecem presentes, garantindo compatibilidade com versões anteriores enquanto adicionam regras de negócio mais robustas.
 
-```markdown
+
 ---
 
 ### Versão 6 - Log em Arquivo, Padrão Strategy e Melhorias na Iteração
