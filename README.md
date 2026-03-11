@@ -1,9 +1,44 @@
-# Sistema_Bancario
+# Sistema Bancario em python
 
-    Desafio de bootcamp para a montagem de um sistema bancário 
+    Projeto desenvolvido durante um bootcamp com o objetivo de construir e evoluir um sistema bancário utilizando Python.
 
-## Versão 1
-Sistema bancário v1 (Um usário)
+O projeto demonstra a evolução do código ao longo de diferentes versões, aplicando conceitos importantes da linguagem como:
+
+- Programação procedural
+- Programação Orientada a Objetos (POO)
+- Decoradores
+- Iteradores e geradores
+- Padrões de projeto (Strategy)
+- Boas práticas de código (PEP8)
+
+Cada versão do sistema representa uma etapa de aprendizado e melhoria da implementação.
+
+## Tecnologias Utilizadas
+
+- Python 3
+- Programação Orientada a Objetos (POO)
+- Decoradores
+- Iteradores e Geradores
+- Padrões de Projeto (Strategy)
+
+Ferramentas de qualidade de código:
+
+- **Flake8** – análise de código
+- **Black** – formatação automática
+- **Isort** – organização de imports
+
+## Como executar o projeto
+
+1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/Sistema_Bancario.git
+
+```markdown
+---
+## Evolução do projeto
+### Versão 1
+Sistema bancário v1 (Um usuário)
     Operação de depósito:
         O usuário deve informar o valor a ser depositado. O valor deve ser positivo.Todos depósitos devem ser armazenados em uma lista.
     Operação de saque:
@@ -11,12 +46,16 @@ Sistema bancário v1 (Um usário)
     Operação de extrato:
         O sistema deve exibir todas as operações de depósito e saque, bem como o saldo atual. Se não houver movimentações, exibir a mensagem "Não foram realizadas movimentações."
 
+
+
     O sistema deve exibir um menu de opções para o usuário escolher a operação desejada (sacar, depositar, extrato ou sair). O programa deve continuar rodando até que o usuário escolha a opção de sair. 
 
     Observações: 3 saques diários, limite de saque de R$500,00 por operação, depósito mínimo de R$1. Caso não tenha saldo suficiente para realizar um saque, exibir a mensagem "Saldo insuficiente." O sistema deve ser implementado utilizando funções para cada operação (sacar, depositar, extrato) e uma função principal para controlar o fluxo do programa.
 
+```markdown
+---
 
-## Versão 2 - Sistema Bancário com POO
+### Versão 2 - Sistema Bancário com POO
 
 Esta versão implementa o sistema bancário utilizando **Programação Orientada a Objetos (POO)**, tornando o código mais organizado, flexível e fácil de manter. Os principais arquivos e componentes são:
 
@@ -31,18 +70,21 @@ Esta versão implementa o sistema bancário utilizando **Programação Orientada
     - Utiliza as classes do sistema para manipular os dados e operações de forma orientada a objetos.
     - Funções como `depositar` e `sacar` foram simplificadas para evitar repetição, usando uma função genérica para transações.
 
-### Funcionalidades principais
+#### Funcionalidades principais
 
 - Cadastro de clientes e contas vinculadas ao CPF.
 - Depósito e saque com validações (valor positivo, limite de saque, máximo de saques diários).
 - Histórico detalhado de transações por conta.
 - Menu interativo para todas as operações.
 
-### Observações
+#### Observações
 
 O uso de POO permite fácil expansão do sistema, como inclusão de novos tipos de conta ou regras específicas. O código está mais modular, facilitando testes e manutenção.
 
-## Versão 3 - Orientação a Objetos (POO)
+```markdown
+---
+
+### Versão 3 - Orientação a Objetos (POO)
 
 A terceira versão reescreve o sistema utilizando programação orientada a objetos. Os principais componentes e arquivos são:
 
@@ -56,22 +98,22 @@ A terceira versão reescreve o sistema utilizando programação orientada a obje
 
 - `desafio_3_2.py` – ponto de entrada (ainda vazio neste repositório) responsável por criar objetos e exibir o menu interativo. Nesta versão o fluxo principal pode ser implementado criando instâncias de clientes e contas e utilizando objetos de transação para registrar operações.
 
-### Funcionalidades mantidas
+#### Funcionalidades mantidas
 
 - Limite de saque de R$500 por operação e até 3 saques por dia.
 - Depósito apenas com valores positivos.
 - Histórico de transações exibido em extrato.
 - Exibição de menu para depositar, sacar, ver extrato ou sair.
 
-### Observações
+#### Observações
 
 A arquitetura orientada a objetos facilita extensão futura (novos tipos de conta, regras específicas) e melhora a organização do código. O README passa a documentar as classes básicas e como usá-las para configurar o sistema bancário na versão POO.
 
-## Versão 4 - Decoradores, Iteradores e Geradores
+### Versão 4 - Decoradores, Iteradores e Geradores
 
 Esta versão aprimora o sistema bancário com conceitos avançados de Python: decoradores, iteradores e geradores. O arquivo principal é `version_4.py`, que integra essas funcionalidades ao sistema POO existente.
 
-### Principais Componentes e Funcionalidades
+#### Principais Componentes e Funcionalidades
 
 - **Decorador de Log**: 
   - Aplicado a todas as funções de transações (depósito, saque, criação de conta, etc.).
@@ -88,22 +130,25 @@ Esta versão aprimora o sistema bancário com conceitos avançados de Python: de
   - Retorna informações básicas de cada conta (número, agência, titular, saldo) em cada iteração.
   - Utilizado na função [`listar_contas`] para exibir a lista de contas.
 
-### Funcionalidades Adicionadas ou Aprimoradas
+#### Funcionalidades Adicionadas ou Aprimoradas
 
 - Menu simplificado com extrato único, sem opção de relatório separado; os detalhes de transações aparecem diretamente no extrato.
 - Logs automáticos para todas as transações, melhorando a rastreabilidade.
 - Relatórios gerados sob demanda, com possibilidade de filtro, utilizando geradores para eficiência de memória.
 - Iteração personalizada sobre contas, facilitando operações em lote ou exibições.
 
-### Observações
+#### Observações
 
 Esta versão demonstra o uso prático de decoradores para logging, geradores para relatórios eficientes e iteradores para navegação customizada de dados. Mantém a compatibilidade com versões anteriores, focando em aprimoramentos funcionais e educacionais. O código é mais conciso e performático, especialmente em operações com grandes volumes de dados.
 
-## Versão 5 - Limites e contagens diárias de transações
+```markdown
+---
+
+### Versão 5 - Limites e contagens diárias de transações
 
 A quinta versão adiciona controles mais sofisticados sobre a quantidade de operações realizadas por conta em um único dia, reforçando regras de negócio e ampliando a rastreabilidade.
 
-### Principais melhorias
+#### Principais melhorias
 
 - **Limite diário de transações**: cada conta agora possui um atributo `_limite_transacoes_diarias` que restringe o número total de operações (saques ou depósitos) por dia.
 - **Contagem de transações**: implementação de `_contar_transacoes_diarias` na classe `Conta` que verifica quantas transações já foram feitas na data atual.
@@ -113,11 +158,14 @@ A quinta versão adiciona controles mais sofisticados sobre a quantidade de oper
 
 As demais funcionalidades de cliente, menu interativo, histórico, gerador de relatórios e iterador de contas permanecem presentes, garantindo compatibilidade com versões anteriores enquanto adicionam regras de negócio mais robustas.
 
-## Versão 6 - Log em Arquivo, Padrão Strategy e Melhorias na Iteração
+```markdown
+---
+
+### Versão 6 - Log em Arquivo, Padrão Strategy e Melhorias na Iteração
 
 A sexta versão consolidada aprimora significativamente o sistema bancário com persistência de logs em arquivo, implementação completa do padrão Strategy e refinamentos na iteração e filtragem de dados.
 
-### Principais Implementações
+#### Principais Implementações
 
 - **Decorador de Log com Persistência em Arquivo**:
   - Novo decorador `log_transacao` que registra automaticamente todas as transações (saques e depósitos) em um arquivo `log.txt`.
@@ -162,7 +210,7 @@ A sexta versão consolidada aprimora significativamente o sistema bancário com 
   - Opção `[lc]` para **Listar contas** com visualização formatada de todas as contas e seus saldos.
   - Menu mantém compatibilidade com versões anteriores (depósito, saque, extrato).
 
-### Funcionalidades Mantidas
+#### Funcionalidades Mantidas
 
 - Cadastro de clientes (PessoaFisica) e contas (ContaCorrente) vinculadas ao CPF.
 - Limites de saque (R$500) e máximo de saques diários (10).
@@ -170,11 +218,11 @@ A sexta versão consolidada aprimora significativamente o sistema bancário com 
 - Histórico detalhado de todas as operações com timestamps.
 - Sistema de log com decoradores para rastreamento de execução.
 
-### Observações
+#### Observações
 
 A versão 6 representa uma consolidação madura do sistema bancário, demonstrando domínio de conceitos avançados de Python como decoradores parametrizados, classes abstratas, iteradores customizados, geradores e padrões de design. O código é altamente extensível, mantível e segue as melhores práticas de engenharia de software. A persistência de logs em arquivo agrega valor significativo para auditoria e conformidade.
 
-## Padronização de código
+### Padronização de código
 
 O projeto passou por uma etapa de **padronização e formatação de código**, seguindo as recomendações da **PEP 8**, o guia oficial de estilo da linguagem Python.
 
