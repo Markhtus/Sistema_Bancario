@@ -3,6 +3,7 @@ extrato = []
 numero_saques = 0
 LIMITES_SAQUES = 3
 
+
 def depositar(valor):
     global saldo
     if valor > 0:
@@ -39,6 +40,7 @@ def visualizar_extrato():
     else:
         print("Não foram realizadas movimentações.")
 
+
 def main():
     while True:
         print("\nMenu:")
@@ -46,9 +48,9 @@ def main():
         print("2 - Sacar")
         print("3 - Visualizar Extrato")
         print("4 - Sair")
-        
+
         opcao = input("\nEscolha uma opção: ")
-        
+
         if opcao == "1":
             valor = float(input("Digite o valor a ser depositado: "))
             depositar(valor)
@@ -62,5 +64,7 @@ def main():
             break
         else:
             print("Opção inválida. Por favor, escolha uma opção válida.")
+
+
 if __name__ == "__main__":
     main()

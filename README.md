@@ -174,3 +174,14 @@ A sexta versão consolidada aprimora significativamente o sistema bancário com 
 
 A versão 6 representa uma consolidação madura do sistema bancário, demonstrando domínio de conceitos avançados de Python como decoradores parametrizados, classes abstratas, iteradores customizados, geradores e padrões de design. O código é altamente extensível, mantível e segue as melhores práticas de engenharia de software. A persistência de logs em arquivo agrega valor significativo para auditoria e conformidade.
 
+## Padronização de código
+
+O projeto passou por uma etapa de **padronização e formatação de código**, seguindo as recomendações da **PEP 8**, o guia oficial de estilo da linguagem Python.
+
+Para isso foram utilizadas as seguintes ferramentas:
+
+- **Black** – formatação automática do código
+- **isort** – organização e padronização dos imports
+- **Flake8** – análise de estilo e verificação de conformidade com a PEP 8
+
+Essas mudanças tiveram como objetivo **melhorar a legibilidade, organização e manutenção do código**, sem alterar a lógica ou o funcionamento do programa.

@@ -60,4 +60,8 @@ Versão 6 - Manipulando dados
             - Valor retornado pela função
             - O arquivo de log deve ser chamado log.txt
             - Se o arquivo de log.txt ja existir, os novos log devem ser adicionados ao final do arquivo.
-            - Cada entrada de log deve estar em uma nova linha
+            - Cada entrada de log deve estar em uma nova linha 
+
+Versão 7 - Convenções e boas práticas
+
+Utilizar flake8, black, isort para padronizar o código. Além de utilizar as recomendaçãoes da PEP8
